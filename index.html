@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Bluetooth</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay loop muted id="background-video">
+        <source src="TECNO.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+
+    <div class="container">
+        <h1>TECNOHOGAR</h1>
+        <p class="subtitle">Controla tu hogar de forma inteligente desde tu teléfono móvil. 
+            Conectividad Bluetooth y Wi-Fi para que tengas el control total de tus dispositivos, luces y más.</p>
+
+        <div id="statusMessage">Estado: Esperando acción...</div>
+
+        <!-- Campo de entrada para la contraseña -->
+        <div class="password-container">
+            <input type="password" id="passwordField" readonly placeholder="Ingresa tu contraseña">
+        </div>
+
+        <!-- Teclado 4x4 -->
+        <div class="keypad">
+            <button onclick="pressKey('1')">1</button>
+            <button onclick="pressKey('2')">2</button>
+            <button onclick="pressKey('3')">3</button>
+            <button onclick="pressKey('A')">A</button>
+
+            <button onclick="pressKey('4')">4</button>
+            <button onclick="pressKey('5')">5</button>
+            <button onclick="pressKey('6')">6</button>
+            <button onclick="pressKey('B')">B</button>
+
+            <button onclick="pressKey('7')">7</button>
+            <button onclick="pressKey('8')">8</button>
+            <button onclick="pressKey('9')">9</button>
+            <button onclick="pressKey('C')">C</button>
+
+            <button onclick="pressKey('*')">*</button>
+            <button onclick="pressKey('0')">0</button>
+            <button onclick="pressKey('#')">#</button>
+            <button onclick="pressKey('D')">D</button>
+        </div>
+
+        <!-- Botón para validar la contraseña -->
+        <button id="ok" onclick="validatePassword()">Ok</button>
+        <button id="conectar" onclick="connectBluetooth()">Conectar Bluetooth</button>
+
+        <!-- Botones para controlar el servomotor y el relé -->
+        <button id="abrirpuerta" onclick="controlServo('00')">Abrir Puerta</button>
+        <button id="cerrar" onclick="controlServo('11')">Cerrar Puerta</button>
+        <button onclick="controlRelay('99')">Prender Foco</button>
+        <button id="apagar" onclick="controlRelay('88')">Apagar Foco</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
